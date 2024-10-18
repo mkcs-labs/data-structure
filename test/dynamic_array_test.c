@@ -15,7 +15,7 @@ int main() {
     test_dynamic_array_peek();
     test_dynamic_array_realloc();
 
-    printf("All tests passed!\n");
+    printf("모든 테스트를 통과했습니다!\n");
     return 0;
 }
 

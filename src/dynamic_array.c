@@ -1,5 +1,7 @@
 #include "dynamic_array.h"
 
+#include <string.h>
+
 /**
  * 동적 배열을 초기화합니다.
  *
@@ -81,7 +83,7 @@ DynamicArrayError dynamic_array_delete(DynamicArray *dynamicArray, const size_t 
     }
 
     void *destination = dynamic_array_peek(dynamicArray, index);
-    void *source = dynamic_array_peek(dynamicArray, index + 1);
+    const void *source = dynamic_array_peek(dynamicArray, index + 1);
     size_t bytes_to_move = (dynamicArray->size - index - 1) * dynamicArray->element_size;
     memmove(destination, source, bytes_to_move);
     dynamicArray->size--;
